@@ -17,6 +17,10 @@ services:
 before_install:
   - echo 0ejxblyfdoEA | docker login -u drodos --password-stdin 2>/dev/null
   - docker pull fr3akyphantom/droid-builder:latest
+  - gem update --system
+  - gem install bundler
+  - gem install rake
+
 before_script:
   - cd $HOME && mkdir twrp
   # Download the TWRP Compressed Source Files from PhantomZone54's Release
