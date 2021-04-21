@@ -16,8 +16,10 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+# Replace ${_CODENAME_} with your Device CodeName's Value. Mine is Primo_RX5.
+# Replace ${_VENDORNAME_} with your Brand/Vendor/Manufacturer's Value, Mine is WALTON 
 
-ifeq ($(TARGET_DEVICE), Armor_3WT)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+ifneq ($(filter Armor_3WT, $(TARGET_DEVICE)),)
+LOCAL_PATH := device/Ulefone/Armor_3WT
+include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
